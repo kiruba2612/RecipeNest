@@ -1,0 +1,262 @@
+.meal-planner {
+  background: url("/image/mealhome.jpeg") no-repeat center center/cover;
+  padding: 80px 0;
+  position: relative;
+}
+
+.meal-planner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+
+.meal-planner .container {
+  position: relative;
+  z-index: 2;
+}
+
+.nav-link:hover {
+  color: #ffc107 !important;
+}
+
+.img-fluid {
+  object-fit: cover;
+  height: 250px;
+  width: 100%;
+}
+
+.hero-section {
+  background-image: url("/image/reg.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 120px 0;
+}
+
+.hero-section h1 {
+  font-size: 42px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.hero-section p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.hero-btn {
+  display: inline-block;
+  background: #5a3e36;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.hero-btn:hover {
+  background: #52c044;
+}
+
+.section-container {
+  padding: 60px 20px;
+}
+
+.card-style {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cooking-tips,
+.latest-recipes,
+.faq-section {
+  background-color: #f8f9fa;
+}
+
+.latest-recipes {
+  padding: 50px 0;
+  background-color: #f9f9f9;
+}
+
+.section-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.recipe-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.recipe-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.recipe-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.recipe-title {
+  margin-top: 15px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #444;
+}
+
+.recipe-description {
+  font-size: 14px;
+  color: #666;
+  margin: 10px 0;
+}
+
+.recipe-rating {
+  font-size: 16px;
+  font-weight: bold;
+  color: #222;
+  margin-top: 10px;
+}
+
+.cooking-tips {
+  padding: 50px 0;
+  background-color: #faf3e3;
+}
+
+.tip-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.tip-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.tip-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.tip-title {
+  margin-top: 15px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #3d2c28;
+}
+
+.tip-description {
+  font-size: 14px;
+  color: #5a3e36;
+  margin-top: 10px;
+}
+
+.meal-planner {
+  background-color: #f8f9fa;
+  padding: 50px 20px;
+  border-radius: 10px;
+  margin-top: 30px;
+}
+
+.meal-planner .section-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.meal-planner .section-description {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.meal-planner .btn {
+  font-size: 18px;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.custom-navbar {
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 32px;
+  color: #333;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar-brand img {
+  height: 60px;
+  margin-right: 12px;
+}
+
+.navbar-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+}
+
+.navbar-nav .nav-item {
+  margin: 0 15px;
+}
+
+.navbar-nav .nav-link {
+  color: #333;
+  font-size: 16px;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: #007bff;
+  font-weight: bold;
+}
+
+.btn-dark {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.btn-dark:hover {
+  background-color: #555;
+}

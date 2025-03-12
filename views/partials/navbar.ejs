@@ -1,0 +1,34 @@
+<link rel="stylesheet" href="/css/navbar.css" />
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark shadow-sm">
+  <div class="container-fluid">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div
+      class="collapse navbar-collapse justify-content-end"
+      id="navbarNavAltMarkup"
+    >
+      <div class="navbar-nav">
+        <a class="nav-link active" href="/">Home</a>
+        <a class="nav-link" href="/recipe">Recipes</a>
+        <a class="nav-link" href="/new">New Recipe</a>
+      </div>
+      <div class="navbar-nav ms-3">
+        <% if(!currentuser) { %>
+        <a class="nav-link" href="/login">Login</a>
+        <a class="nav-link" href="/register">Register</a>
+        <% } else { %>
+        <a class="nav-link" href="/logout">Logout</a>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</nav>

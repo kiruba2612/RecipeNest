@@ -1,0 +1,46 @@
+<%- include('../layouts/boilerplate') %>
+<link rel="stylesheet" href="/css/show.css" />
+
+<div class="container mt-5">
+  <h1><span class="badge bg-dark fs-1">Your Recipe</span></h1>
+  <div class="card shadow-sm">
+    <!-- 🔊 Modern Sound Button -->
+    <button class="voice-btn" onclick="readRecipe()">🔊</button>
+
+    <div class="recipe-content">
+      <!-- Recipe Image -->
+      <img
+        src="<%= recipe.image %>"
+        class="recipe-image"
+        alt="<%= recipe.name %>"
+      />
+
+      <!-- Recipe Details -->
+      <div class="recipe-details">
+        <h1 class="card-title"><%= recipe.name %></h1>
+        <h4 class="text-muted">Cuisine: <%= recipe.cuisine %></h4>
+        <hr />
+        <h5>Ingredients:</h5>
+        <p id="ingredients"><%= recipe.ingredients %></p>
+      </div>
+    </div>
+
+    <hr />
+    <h5>Description/Steps:</h5>
+    <p id="steps"><%= recipe.steps %></p>
+
+    <div class="mt-3">
+      <a href="/recipe" class="btn btn-primary">Back to Recipes</a>
+      <a href="/edit/<%=recipe.id%>" class="btn btn-warning">Edit Recipe</a>
+      <form
+        class="d-inline"
+        action="/recipe/<%=recipe.id%>?_method=Delete"
+        method="post"
+      >
+        <button class="btn btn-danger">Delete</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="/javascript/sound.js"></script>

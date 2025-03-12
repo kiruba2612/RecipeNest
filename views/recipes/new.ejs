@@ -1,0 +1,80 @@
+<%- include('../layouts/boilerplate') %>
+
+<link rel="stylesheet" href="/css/new.css" />
+<section
+  class="recipe-form-section d-flex justify-content-center align-items-center py-5"
+>
+  <div class="container p-5 bg-white shadow-lg rounded">
+    <h1 class="text-center text-primary mb-3 fw-bold">Create a New Recipe</h1>
+    <form action="/new" method="POST" class="validated-form">
+      <div class="mb-2">
+        <label class="form-label fw-semibold" for="name">Dish Name</label>
+        <input
+          class="form-control border-primary p-3"
+          type="text"
+          id="name"
+          name="name"
+          required
+        />
+      </div>
+
+      <div class="mb-2">
+        <label class="form-label fw-semibold" for="cuisine">Cuisine</label>
+        <input
+          class="form-control border-primary p-3"
+          type="text"
+          id="cuisine"
+          name="cuisine"
+          required
+        />
+      </div>
+
+      <div class="mb-2">
+        <label class="form-label fw-semibold" for="image">Image URL</label>
+        <input
+          class="form-control border-primary p-3"
+          type="text"
+          id="image"
+          name="image"
+          required
+        />
+      </div>
+
+      <div class="mb-2">
+        <label class="form-label fw-semibold" for="ingredients"
+          >Ingredients</label
+        >
+        <textarea
+          class="form-control border-primary p-3"
+          id="ingredients"
+          name="ingredients"
+          rows="4"
+          required
+        ></textarea>
+      </div>
+
+      <div class="mb-2">
+        <label class="form-label fw-semibold" for="steps">Steps</label>
+        <textarea
+          class="form-control border-primary p-3"
+          id="description"
+          name="steps"
+          rows="4"
+          required
+        ></textarea>
+      </div>
+
+      <div class="d-flex justify-content-between mt-3">
+        <button class="btn btn-success px-4 py-3 shadow fw-semibold">
+          Add Recipe
+        </button>
+        <a href="/recipe" class="btn btn-warning px-4 py-3 shadow fw-semibold"
+          >All Recipes</a
+        >
+        <a href="/" class="btn btn-secondary px-4 py-3 shadow fw-semibold"
+          >Home</a
+        >
+      </div>
+    </form>
+  </div>
+</section>

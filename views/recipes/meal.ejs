@@ -1,0 +1,147 @@
+<%- include('../layouts/boilerplate') %>
+<link rel="stylesheet" href="/css/meal.css" />
+
+<section id="meal-planner" class="meal-planner section-container text-center">
+  <div class="container">
+    <div class="card">
+      <h2 class="section-title">Plan Your Meals Effortlessly</h2>
+      <p class="section-description">
+        Use our dynamic meal planner to create a personalized meal plan that
+        suits your dietary needs.
+      </p>
+      <form id="mealForm">
+        <div class="mb-3">
+          <label for="category" class="form-label">Select Category</label>
+          <div class="dropdown-wrapper">
+            <select class="form-select custom-dropdown" id="category" required>
+              <option value="adult">👨‍💼 Adult</option>
+              <option value="elder">👴 Elder</option>
+              <option value="kids">🧒 Kids</option>
+            </select>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="health" class="form-label">Select Health Condition</label>
+          <div class="dropdown-wrapper">
+            <select class="form-select custom-dropdown" id="health" required>
+              <option value="normal">✅ Normal</option>
+              <option value="diabetes">🩸 Diabetes</option>
+              <option value="heart">❤️ Heart Condition</option>
+              <option value="obesity">⚖️ Obesity</option>
+              <option value="hypertension">💢 Hypertension</option>
+              <option value="cholesterol">🛑 High Cholesterol</option>
+            </select>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="duration" class="form-label">Select Duration</label>
+          <div class="dropdown-wrapper">
+            <select class="form-select custom-dropdown" id="duration" required>
+              <option value="day">📅 One Day</option>
+              <option value="week">📆 One Week</option>
+              <option value="month">🗓️ One Month</option>
+            </select>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Generate Plan</button>
+      </form>
+      <div id="mealPlan" class="mt-4 mb-3"></div>
+      <button onclick="window.location.href='/'" class="btn btn-secondary mt-3">
+        Go Home
+      </button>
+    </div>
+  </div>
+</section>
+
+<script>
+  function toggleDropdown() {
+    document.querySelector(".dropdown").classList.toggle("active");
+  }
+
+  function selectOption(option) {
+    document.querySelector(".dropdown-btn").textContent = option + " ▼";
+    document.querySelector(".dropdown").classList.remove("active");
+  }
+
+  // Close dropdown when clicking outside
+  document.addEventListener("click", function (event) {
+    if (!event.target.closest(".dropdown")) {
+      document.querySelector(".dropdown").classList.remove("active");
+    }
+  });
+</script>
+
+<script>
+  document
+    .getElementById("mealForm")
+    .addEventListener("submit", function (event) {
+      event.preventDefault();
+      const category = document.getElementById("category").value;
+      const health = document.getElementById("health").value;
+      const duration = document.getElementById("duration").value;
+      generateMealPlan(category, health, duration);
+    });
+
+  function generateMealPlan(category, health, duration) {
+    let plans = {
+      adult: [
+        "Balanced diet with lean proteins, whole grains, and healthy fats.",
+        "High-fiber meals with moderate carbs for sustained energy.",
+        "Protein-rich meals for muscle maintenance and overall health.",
+      ],
+      elder: [
+        "Easily digestible meals with calcium, vitamins, and low sodium.",
+        "Soft-textured foods with healthy fats and proteins.",
+        "Nutrient-dense meals to support aging health needs.",
+      ],
+      kids: [
+        "Nutritious meals with a mix of proteins, carbs, and healthy fats.",
+        "Calcium and iron-rich foods to support growth.",
+        "Healthy snacks along with well-balanced main meals.",
+      ],
+    };
+
+    let dishesList = {
+      adult: [
+        "Grilled chicken, Quinoa salad, Steamed vegetables, Oatmeal with fruits.",
+        "Brown rice with lentils, Roasted salmon, Stir-fried greens.",
+        "Whole wheat pasta with veggies, Greek yogurt with nuts.",
+      ],
+      elder: [
+        "Vegetable soup, Steamed fish, Mashed sweet potatoes, Oat porridge.",
+        "Soft boiled eggs, Cooked spinach, Low-sodium lentil soup.",
+        "Homemade smoothies, Soft whole grains, Baked sweet potatoes.",
+      ],
+      kids: [
+        "Scrambled eggs, Whole wheat pancakes, Banana smoothie, Chicken soup.",
+        "Vegetable pasta, Baked fish fingers, Yogurt with honey.",
+        "Fruit bowl, Peanut butter toast, Cottage cheese salad.",
+      ],
+    };
+
+    let plan = plans[category].join("<br>");
+    let dishes = dishesList[category].join("<br>");
+
+    if (health === "diabetes") {
+      dishes +=
+        "<br> (Low sugar, High fiber options like whole grains, and nuts).";
+    } else if (health === "heart") {
+      dishes +=
+        "<br> (Heart-healthy options like omega-3 rich fish, nuts, and green veggies).";
+    } else if (health === "obesity") {
+      dishes +=
+        "<br> (Low-calorie, high-protein meals like grilled chicken, salads, and legumes).";
+    }
+
+    let durationText =
+      duration === "day" ? "Day" : duration === "week" ? "Week" : "Month";
+    document.getElementById("mealPlan").innerHTML = `
+                <div class='card'>
+                    <h4 class="mb-3">${durationText} Meal Plan for ${
+      category.charAt(0).toUpperCase() + category.slice(1)
+    } (${health.charAt(0).toUpperCase() + health.slice(1)})</h4>
+                    <p><strong>Diet Plan:</strong><br> ${plan}</p>
+                    <p><strong>Dishes:</strong><br> ${dishes}</p>
+                </div>`;
+  }
+</script>
