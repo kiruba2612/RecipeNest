@@ -1,0 +1,91 @@
+body {
+  min-height: 60vh;
+  margin-top: 30px; /* Space for navbar */
+  padding-bottom: 50px;
+  background: url("/image/faq-bg.png") repeat center center/cover;
+}
+
+/* Recipe Form Section */
+.recipe-form-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Form Container */
+.recipe-form-section .container {
+  max-width: 600px;
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  margin-bottom: 50px; /* Space at the bottom */
+}
+
+/* Form Headings */
+.recipe-form-section h1 {
+  color: #007bff;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Input Fields */
+.recipe-form-section .form-control {
+  border: 2px solid #007bff;
+  border-radius: 6px;
+  padding: 12px;
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.recipe-form-section .form-control:focus {
+  border-color: #0056b3;
+  box-shadow: 0 0 6px rgba(0, 123, 255, 0.5);
+}
+
+/* Labels */
+.recipe-form-section .form-label {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+/* Buttons */
+.recipe-form-section .btn {
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+}
+
+.recipe-form-section .btn-success {
+  background-color: #28a745;
+  border: none;
+}
+
+.recipe-form-section .btn-success:hover {
+  background-color: #218838;
+}
+
+.recipe-form-section .btn-warning {
+  background-color: #ffc107;
+  border: none;
+}
+
+.recipe-form-section .btn-warning:hover {
+  background-color: #e0a800;
+}
+
+.recipe-form-section .btn-secondary {
+  background-color: #6c757d;
+  border: none;
+}
+
+.recipe-form-section .btn-secondary:hover {
+  background-color: #5a6268;
+}
+
+/* Button Shadows */
+.recipe-form-section .btn.shadow {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}

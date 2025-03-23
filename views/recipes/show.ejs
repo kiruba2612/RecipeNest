@@ -1,0 +1,105 @@
+<%- include('../layouts/boilerplate') %>
+<link rel="stylesheet" href="/css/show.css" />
+
+<div class="container mt-5">
+  <h1><span class="badge bg-dark fs-1">Your Recipe</span></h1>
+
+  <div class="card shadow-sm">
+    <!-- 🔊 Modern Sound Button -->
+    <button class="voice-btn" onclick="readRecipe()">🔊</button>
+
+    <div class="recipe-content">
+      <!-- Recipe Image -->
+      <img
+        src="<%= recipe.image.length > 0 ? recipe.image[0].url : '/default-image.jpg' %>"
+        class="recipe-image"
+        alt="<%= recipe.name %>"
+      />
+
+      <!-- Recipe Details -->
+      <div class="recipe-details">
+        <h1 class="card-title"><%= recipe.name %></h1>
+        <h4 class="text-muted">Cuisine: <%= recipe.cuisine %></h4>
+        <hr />
+        <h5>Ingredients:</h5>
+        <p id="ingredients"><%= recipe.ingredients %></p>
+      </div>
+    </div>
+
+    <hr />
+    <h5>Description/Steps:</h5>
+    <p id="steps"><%= recipe.steps %></p>
+
+    <div class="mt-3">
+      <a href="/recipe" class="btn btn-primary px-4 py-3 shadow fw-semibold"
+        >Back to Recipes</a
+      >
+
+      <% if (recipe.userId.toString() === user.id.toString()) { %>
+      <a
+        href="/edit/<%= recipe.id %>"
+        class="btn btn-warning px-4 py-3 shadow fw-semibold"
+        >Edit Recipe</a
+      >
+      <button
+        class="btn btn-danger px-4 py-3 shadow fw-semibold"
+        onclick="openDeleteModal('<%= recipe.name %>', '<%= recipe.id %>')"
+      >
+        Delete
+      </button>
+      <% } %>
+    </div>
+  </div>
+</div>
+
+<!-- Custom Delete Modal -->
+<div id="deleteModal" class="custom-modal">
+  <div class="modal-content">
+    <h4>Confirm Deletion</h4>
+    <p>Type the recipe name to confirm deletion:</p>
+    <input type="text" id="recipeConfirmInput" class="form-control" />
+    <div class="modal-buttons">
+      <button class="btn btn-secondary" onclick="closeDeleteModal()">
+        Cancel
+      </button>
+      <button class="btn btn-danger" onclick="confirmDelete()">Delete</button>
+    </div>
+    <p id="error-message" class="text-danger mt-2" style="display: none">
+      Incorrect recipe name.
+    </p>
+  </div>
+</div>
+
+<script src="/javascript/sound.js"></script>
+<script>
+  let recipeToDelete = "";
+  let recipeIdToDelete = "";
+
+  function openDeleteModal(recipeName, recipeId) {
+    recipeToDelete = recipeName;
+    recipeIdToDelete = recipeId;
+    document.getElementById("deleteModal").style.display = "flex";
+    document.getElementById("recipeConfirmInput").value = "";
+    document.getElementById("error-message").style.display = "none";
+  }
+
+  function closeDeleteModal() {
+    document.getElementById("deleteModal").style.display = "none";
+  }
+
+  function confirmDelete() {
+    const userInput = document.getElementById("recipeConfirmInput").value;
+    if (userInput === recipeToDelete) {
+      fetch(`/recipe/${recipeIdToDelete}?_method=DELETE`, {
+        method: "POST",
+      })
+        .then(() => {
+          document.getElementById("deleteModal").style.display = "none";
+          window.location.href = "/recipe";
+        })
+        .catch((err) => alert("Error deleting recipe"));
+    } else {
+      document.getElementById("error-message").style.display = "block";
+    }
+  }
+</script>

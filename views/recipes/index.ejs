@@ -1,0 +1,46 @@
+<%-include('../layouts/boilerplate')%> <%-include('../partials/navbar')%>
+<link rel="stylesheet" href="/css/index.css" />
+<div class="container mt-5">
+  <h1><span class="badge bg-dark fs-1 my-1">Recipe Showcase</span></h1>
+
+  <div class="search-bar">
+    <div class="input-container">
+      <input
+        type="text"
+        id="search"
+        class="form-control"
+        placeholder="Search recipes..."
+        onkeyup="searchRecipes()"
+        onkeydown="navigateResults(event)"
+      />
+      <span class="clear-icon" id="clearIcon">&#10006;</span>
+    </div>
+  </div>
+
+  <div id="recipeContainer" class="recipe-grid">
+    <% for (let i = 0; i < recipes.length; i++) { %>
+    <div class="recipe-card show">
+      <div class="card">
+        <img
+          src="<%= recipes[i].image.length > 0 ? recipes[i].image[0].url : '/default-image.jpg' %>"
+          class="card-img-top"
+          alt="<%= recipes[i].name %>"
+        />
+        <div class="card-body">
+          <h5 class="card-title"><%= recipes[i].name %></h5>
+          <p class="card-text">Cuisine: <%= recipes[i].cuisine %></p>
+          <a href="/show/<%= recipes[i].id %>" class="btn view-recipe"
+            >View Recipe</a
+          >
+        </div>
+      </div>
+    </div>
+    <% } %>
+  </div>
+
+  <div id="noResults" class="no-results">
+    Sorry, the recipe is not available. We will add it soon!
+  </div>
+</div>
+<script src="/javascript/search.js"></script>
+<%-include('../partials/footer')%>

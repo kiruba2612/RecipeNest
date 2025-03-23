@@ -1,0 +1,175 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+
+body {
+  background: url("/image/faq-bg.png") repeat center center/cover;
+  font-family: "Poppins", sans-serif;
+  background-attachment: fixed;
+  padding: 20px;
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 15px 30px;
+}
+
+.card {
+  border-radius: 15px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 25px;
+  position: relative;
+}
+
+/* 🔹 Layout */
+.recipe-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.recipe-image {
+  flex: 1;
+  max-width: 350px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.recipe-details {
+  flex: 2;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.text-muted {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+hr {
+  border-top: 2px solid #ddd;
+  margin: 15px 0;
+}
+
+/* 🔹 Buttons */
+.recipe-form-section .btn {
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+}
+.btn-primary {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.btn-primary:hover {
+  background-color: #218838;
+}
+
+.btn-warning {
+  background-color: #ffc107;
+  border-color: #ffc107;
+  color: #333;
+}
+
+.btn-warning:hover {
+  background-color: #e0a800;
+  border-color: #d39e00;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  border-color: #dc3545;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+  border-color: #bd2130;
+}
+/* 🔊 Sound Button */
+.voice-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #5398f1;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  padding: 10px 15px;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.voice-btn:hover {
+  background: #009efa;
+  transform: scale(1.1);
+}
+
+.voice-btn:active {
+  transform: scale(0.95);
+}
+
+/* 🔹 Responsive Styles */
+@media (max-width: 768px) {
+  .recipe-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .recipe-image {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.custom-modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 30px 40px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+  width: 450px;
+  animation: fadeIn 0.3s ease-in-out;
+}
+.modal-content {
+  background: #fff;
+  color: #333;
+  padding: 25px;
+  border-radius: 8px;
+}
+.modal-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+#error-message {
+  padding-top: 5px;
+  font-size: 1rem;
+  color: #d9534f;
+  font-weight: bold;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -55%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}

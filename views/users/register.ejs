@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipe Nest</title>
+    <link rel="icon" type="image/png" href="/image/titlelogo.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/register.css" />
+  </head>
+  <body>
+    <div class="register-container">
+      <div class="register-box">
+        <h2>Create an Account</h2>
+        <p>Join us to explore and share recipes!</p>
+
+        <!-- Alert Box -->
+        <div id="alertBox" class="alert-box"></div>
+
+        <form action="/register" method="post">
+          <div class="input-group">
+            <input
+              type="text"
+              name="name"
+              class="form-control"
+              placeholder="Full Name"
+              required
+            />
+          </div>
+          <div class="input-group">
+            <input
+              type="email"
+              name="email"
+              class="form-control"
+              placeholder="Email Address"
+              required
+            />
+          </div>
+          <div class="input-group">
+            <input
+              type="password"
+              name="password"
+              class="form-control"
+              placeholder="Password"
+              required
+            />
+          </div>
+          <button type="submit" class="btn btn-register">Register</button>
+        </form>
+
+        <p class="login-link">
+          Already have an account? <a href="/login">Login here</a>
+        </p>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const urlParams = new URLSearchParams(window.location.search);
+        const error = urlParams.get("error");
+        const success = urlParams.get("success");
+        const alertBox = document.getElementById("alertBox");
+
+        if (error) {
+          alertBox.innerText = error;
+          alertBox.classList.add("alert-error");
+          alertBox.style.display = "block";
+        } else if (success) {
+          alertBox.innerText = success;
+          alertBox.classList.add("alert-success");
+          alertBox.style.display = "block";
+
+          setTimeout(() => {
+            window.location.href = "/login"; // Redirect to login after success
+          }, 2000);
+        }
+      });
+    </script>
+  </body>
+</html>

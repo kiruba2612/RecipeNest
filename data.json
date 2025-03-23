@@ -1,0 +1,832 @@
+{
+  "dish": [
+    {
+      "name": "Spaghetti Carbonara",
+      "cuisine": "Italian",
+      "ingredients": [
+        "spaghetti",
+        "egg yolks",
+        "parmesan cheese",
+        "pecorino cheese",
+        "pancetta",
+        "garlic",
+        "black pepper",
+        "salt"
+      ],
+      "steps": [
+        "Cook spaghetti in salted water until al dente.",
+        "Fry pancetta with garlic in olive oil until crispy.",
+        "Beat the egg yolks and mix with grated cheese.",
+        "Drain pasta and reserve some water.",
+        "Toss pasta with pancetta and garlic.",
+        "Add egg mixture and toss quickly, adding pasta water to create a creamy sauce.",
+        "Season with black pepper and salt."
+      ],
+      "image": "https://www.cookingclassy.com/wp-content/uploads/2020/10/spaghetti-carbonara-01.jpg"
+    },
+    {
+      "name": "Chicken Curry",
+      "cuisine": "Indian",
+      "ingredients": [
+        "chicken breast",
+        "onion",
+        "garlic",
+        "ginger",
+        "tomato",
+        "yogurt",
+        "curry powder",
+        "cumin",
+        "coriander",
+        "turmeric",
+        "coconut milk",
+        "cilantro"
+      ],
+      "steps": [
+        "Heat oil in a pan and sauté onions, garlic, and ginger.",
+        "Add chicken pieces and cook until browned.",
+        "Stir in curry powder, cumin, coriander, and turmeric.",
+        "Add chopped tomatoes and cook until softened.",
+        "Mix in yogurt and coconut milk, simmer until chicken is cooked.",
+        "Garnish with fresh cilantro and serve with rice."
+      ],
+      "image": "https://th.bing.com/th/id/OIP.1xewzBXjeIIF5HNrCXWgqQHaLH?rs=1&pid=ImgDetMain"
+    },
+    {
+      "name": "Sushi Rolls",
+      "cuisine": "Japanese",
+      "ingredients": [
+        "sushi rice",
+        "nori sheets",
+        "cucumber",
+        "avocado",
+        "crab sticks",
+        "soy sauce",
+        "wasabi",
+        "rice vinegar",
+        "sugar",
+        "salt"
+      ],
+      "steps": [
+        "Cook sushi rice and season with rice vinegar, sugar, and salt.",
+        "Lay a nori sheet on a bamboo mat.",
+        "Spread a thin layer of sushi rice on the nori.",
+        "Place cucumber, avocado, and crab sticks along the rice.",
+        "Roll the sushi tightly using the bamboo mat.",
+        "Slice the roll into pieces and serve with soy sauce and wasabi."
+      ],
+      "image": "https://www.thespruceeats.com/thmb/IyxiJdbwFaixy4iolNYTLjBmW_w=/4288x2848/filters:fill(auto,1)/kimbap-korean-sushi-rolls-2118795-Hero-5b7dbdd346e0fb00250718b8.jpg"
+    },
+    {
+      "name": "Tacos",
+      "cuisine": "Mexican",
+      "ingredients": [
+        "corn tortillas",
+        "ground beef",
+        "onion",
+        "garlic",
+        "chili powder",
+        "cumin",
+        "lettuce",
+        "tomatoes",
+        "cheddar cheese",
+        "sour cream",
+        "hot sauce"
+      ],
+      "steps": [
+        "Brown ground beef with onion and garlic.",
+        "Season with chili powder and cumin.",
+        "Warm the tortillas on a griddle.",
+        "Fill tortillas with seasoned beef and top with lettuce, tomatoes, cheese, sour cream, and hot sauce."
+      ],
+      "image": "https://img.taste.com.au/R_dRdL7V/taste/2022/09/healthy-tacos-recipe-181113-1.jpg"
+    },
+    {
+      "name": "Margherita Pizza",
+      "cuisine": "Italian",
+      "ingredients": [
+        "pizza dough",
+        "tomato sauce",
+        "fresh mozzarella",
+        "fresh basil",
+        "olive oil",
+        "salt"
+      ],
+      "steps": [
+        "Preheat oven to 475°F (245°C).",
+        "Roll out pizza dough and place on a baking sheet.",
+        "Spread tomato sauce evenly over the dough.",
+        "Top with fresh mozzarella and basil leaves.",
+        "Drizzle with olive oil and sprinkle with salt.",
+        "Bake for 10-12 minutes or until crust is golden and cheese is bubbly."
+      ],
+      "image": "https://th.bing.com/th/id/OIP.1Xr2OkJdpGuaysQAOtn5YgHaLH?rs=1&pid=ImgDetMain"
+    },
+    {
+      "name": "Caesar Salad",
+      "cuisine": "American",
+      "ingredients": [
+        "romaine lettuce",
+        "croutons",
+        "parmesan cheese",
+        "caesar dressing",
+        "garlic",
+        "lemon",
+        "olive oil"
+      ],
+      "steps": [
+        "Wash and chop the romaine lettuce.",
+        "Toast croutons with olive oil and garlic.",
+        "In a bowl, toss lettuce with Caesar dressing.",
+        "Top with croutons, parmesan cheese, and a squeeze of lemon."
+      ],
+      "image": "https://th.bing.com/th/id/OIP.NCuPWmNFY_pTSkNR5I_OHwHaJQ?rs=1&pid=ImgDetMain"
+    },
+    {
+      "name": "Pav Bhaji",
+      "cuisine": "Indian",
+      "ingredients": [
+        "potatoes",
+        "onions",
+        "tomatoes",
+        "green peas",
+        "cauliflower",
+        "bhaji masala",
+        "butter",
+        "buns",
+        "cilantro",
+        "lemon"
+      ],
+      "steps": [
+        "Boil potatoes, peas, and cauliflower.",
+        "Cook onions and tomatoes in butter until soft.",
+        "Mash boiled vegetables and add to the pan with bhaji masala.",
+        "Simmer until the flavors combine.",
+        "Serve with buttered, toasted buns and garnish with cilantro and lemon."
+      ],
+      "image": "https://static.vecteezy.com/system/resources/previews/016/283/054/large_2x/cheese-pav-bhaji-recipe-is-a-street-food-bhaji-pav-recipe-with-addition-of-cheese-free-photo.jpg"
+    },
+    {
+      "name": "Chicken Alfredo",
+      "cuisine": "Italian",
+      "ingredients": [
+        "chicken breast",
+        "fettuccine pasta",
+        "heavy cream",
+        "parmesan cheese",
+        "garlic",
+        "butter",
+        "parsley",
+        "salt",
+        "pepper"
+      ],
+      "steps": [
+        "Cook fettuccine pasta in salted water.",
+        "Season chicken breasts and cook in a pan until browned.",
+        "Melt butter in a pan and sauté garlic.",
+        "Add heavy cream and bring to a simmer.",
+        "Stir in parmesan cheese until the sauce thickens.",
+        "Toss cooked pasta and chicken in the sauce.",
+        "Garnish with parsley and serve."
+      ],
+      "image": "https://1.bp.blogspot.com/-yEiAW-nNrh0/Xi3Vwhe5VrI/AAAAAAAAKj8/zWnxsfhQDDgn8l607JZOws52t0OYHNLYwCEwYBhgL/s1600/best%2Band%2Beasy%2Bchicken%2Balfredo%2Bin%2Ba%2Bpan.jpg"
+    },
+    {
+      "name": "Pancakes",
+      "cuisine": "American",
+      "ingredients": [
+        "flour",
+        "eggs",
+        "milk",
+        "baking powder",
+        "sugar",
+        "salt",
+        "butter",
+        "maple syrup"
+      ],
+      "steps": [
+        "Mix dry ingredients: flour, sugar, baking powder, and salt.",
+        "In a separate bowl, whisk eggs, milk, and melted butter.",
+        "Combine wet and dry ingredients until smooth.",
+        "Cook pancakes on a heated, greased griddle.",
+        "Serve with maple syrup."
+      ],
+      "image": "https://www.acouplecooks.com/wp-content/uploads/2020/11/Pancakes-without-Eggs-005.jpg"
+    },
+    {
+      "name": "Vegetable Stir Fry",
+      "cuisine": "Chinese",
+      "ingredients": [
+        "broccoli",
+        "carrots",
+        "bell peppers",
+        "onions",
+        "garlic",
+        "soy sauce",
+        "sesame oil",
+        "ginger",
+        "tofu"
+      ],
+      "steps": [
+        "Chop vegetables into bite-sized pieces.",
+        "Stir-fry garlic and ginger in sesame oil.",
+        "Add tofu and cook until lightly browned.",
+        "Add vegetables and stir-fry until tender.",
+        "Pour in soy sauce and cook for a few more minutes.",
+        "Serve with steamed rice."
+      ],
+      "image": "https://th.bing.com/th/id/OIP.UT9mUNvWKFIwy3GI5TA0uwAAAA?rs=1&pid=ImgDetMain"
+    },
+    {
+      "name": "Beef Tacos",
+      "cuisine": "Mexican",
+      "ingredients": [
+        "ground beef",
+        "taco seasoning",
+        "corn tortillas",
+        "lettuce",
+        "cheddar cheese",
+        "sour cream",
+        "tomatoes",
+        "salsa"
+      ],
+      "steps": [
+        "Cook ground beef with taco seasoning.",
+        "Warm the corn tortillas.",
+        "Fill tortillas with seasoned beef and top with lettuce, cheese, sour cream, tomatoes, and salsa."
+      ],
+      "image": "https://www.jocooks.com/wp-content/uploads/2020/08/ground-beef-tacos-1-12.jpg"
+    },
+    {
+      "name": "Eggplant Parmesan",
+      "cuisine": "Italian",
+      "ingredients": [
+        "eggplant",
+        "tomato sauce",
+        "mozzarella cheese",
+        "parmesan cheese",
+        "bread crumbs",
+        "flour",
+        "eggs",
+        "olive oil",
+        "basil"
+      ],
+      "steps": [
+        "Slice eggplant and bread it with flour, egg, and breadcrumbs.",
+        "Fry eggplant slices in olive oil until golden.",
+        "Layer fried eggplant with tomato sauce and mozzarella in a baking dish.",
+        "Top with parmesan cheese and bake at 375°F for 25 minutes.",
+        "Garnish with fresh basil."
+      ],
+      "image": "https://www.tablefortwoblog.com/wp-content/uploads/2022/06/eggplant-parmesan-recipe-photo-tablefortwoblog-2-scaled.jpg"
+    },
+    {
+      "name": "Vegetable Samosas",
+      "cuisine": "Indian",
+      "ingredients": [
+        "potatoes",
+        "peas",
+        "onion",
+        "coriander",
+        "cumin",
+        "garam masala",
+        "phyllo dough",
+        "oil",
+        "cilantro"
+      ],
+      "steps": [
+        "Boil potatoes and mash them.",
+        "Sauté onions, peas, and spices.",
+        "Mix the mashed potatoes with the cooked vegetables.",
+        "Wrap the mixture in phyllo dough and form triangles.",
+        "Fry the samosas until golden and crispy.",
+        "Serve with chutney and garnish with cilantro."
+      ],
+      "image": "http://ts2.mm.bing.net/th?id=OIP.f9RZ_B8kvwlxxNtnomDHzAHaKX&pid=15.1"
+    },
+    {
+      "name": "Lasagna",
+      "cuisine": "Italian",
+      "ingredients": [
+        "lasagna noodles",
+        "ground beef",
+        "tomato sauce",
+        "mozzarella cheese",
+        "ricotta cheese",
+        "parmesan cheese",
+        "garlic",
+        "onion",
+        "oregano",
+        "basil"
+      ],
+      "steps": [
+        "Cook lasagna noodles and set aside.",
+        "Cook ground beef with garlic, onions, and spices.",
+        "Mix ricotta cheese with herbs.",
+        "Layer lasagna noodles, meat sauce, ricotta cheese, and mozzarella.",
+        "Repeat layers and top with parmesan cheese.",
+        "Bake at 375°F for 40 minutes."
+      ],
+      "image": "https://www.modernhoney.com/wp-content/uploads/2019/08/Classic-Lasagna-13-scaled.jpg"
+    },
+    {
+      "name": "Shrimp Scampi",
+      "cuisine": "Italian",
+      "ingredients": [
+        "shrimp",
+        "spaghetti",
+        "garlic",
+        "butter",
+        "olive oil",
+        "lemon",
+        "parsley",
+        "red pepper flakes"
+      ],
+      "steps": [
+        "Cook spaghetti in salted water.",
+        "Sauté shrimp, garlic, and red pepper flakes in butter and olive oil.",
+        "Add lemon juice and zest.",
+        "Toss cooked spaghetti with the shrimp and sauce.",
+        "Garnish with parsley and serve."
+      ],
+      "image": "https://theblondcook.com/wp-content/uploads/2020/06/easy-shrimp-scampi-2-3.jpg"
+    },
+
+    {
+      "name": "Baked Ziti",
+      "cuisine": "Italian",
+      "ingredients": [
+        "ziti pasta",
+        "tomato sauce",
+        "ricotta cheese",
+        "mozzarella cheese",
+        "parmesan cheese",
+        "garlic",
+        "onion",
+        "oregano"
+      ],
+      "steps": [
+        "Cook ziti pasta and set aside.",
+        "Sauté garlic and onion, then add tomato sauce and spices.",
+        "Mix pasta with tomato sauce and ricotta cheese.",
+        "Top with mozzarella and parmesan cheese.",
+        "Bake at 350°F for 20-25 minutes."
+      ],
+      "image": "https://th.bing.com/th/id/OIP.pL0GaF9r0hrN3sbZWtyuLQHaLH?rs=1&pid=ImgDetMain"
+    },
+    {
+      "name": "Beef Stroganoff",
+      "cuisine": "Russian",
+      "ingredients": [
+        "beef sirloin",
+        "onion",
+        "garlic",
+        "mushrooms",
+        "sour cream",
+        "beef broth",
+        "flour",
+        "butter",
+        "egg noodles"
+      ],
+      "steps": [
+        "Sauté beef, onion, and garlic in butter.",
+        "Add mushrooms and cook until soft.",
+        "Stir in flour to thicken.",
+        "Add beef broth and simmer.",
+        "Finish with sour cream and serve over egg noodles."
+      ],
+      "image": "https://ohsweetbasil.com/wp-content/uploads/easy-ground-beef-stroganoff-recipe-8-1365x2048.jpg"
+    },
+    {
+      "name": "Chicken Parmesan",
+      "cuisine": "Italian",
+      "ingredients": [
+        "chicken breasts",
+        "tomato sauce",
+        "mozzarella cheese",
+        "parmesan cheese",
+        "bread crumbs",
+        "flour",
+        "eggs",
+        "olive oil"
+      ],
+      "steps": [
+        "Bread chicken with flour, egg, and breadcrumbs.",
+        "Fry chicken until golden.",
+        "Top with tomato sauce and mozzarella cheese.",
+        "Bake at 375°F for 20 minutes."
+      ],
+      "image": "https://th.bing.com/th/id/OIP.LN2LkbjfLF-8DcP90J8OTQHaLG?rs=1&pid=ImgDetMain"
+    },
+
+    {
+      "name": "Biriyani",
+      "cuisine": "Indian",
+      "ingredients": [
+        "basmati rice",
+        "chicken",
+        "yogurt",
+        "onions",
+        "spices",
+        "ghee",
+        "saffron"
+      ],
+      "steps": [
+        "Wash and soak basmati rice for 30 minutes.",
+        "Cook chicken with spices, yogurt, and onions until tender.",
+        "Layer cooked rice and chicken in a pot.",
+        "Add saffron soaked in milk and ghee between layers.",
+        "Cover and cook on low heat until flavors combine."
+      ],
+      "image": "https://th.bing.com/th/id/OIP.1jRfHAaYed_aXcL0rpmawQHaFj?rs=1&pid=ImgDetMain"
+    },
+    {
+      "name": "Nasi Goreng",
+      "cuisine": "Indonesian",
+      "ingredients": [
+        "rice",
+        "soy sauce",
+        "shrimp",
+        "egg",
+        "garlic",
+        "chili",
+        "shallots"
+      ],
+      "steps": [
+        "Cook rice and let it cool.",
+        "Sauté garlic, chili, and shallots in oil.",
+        "Add shrimp and stir-fry until cooked.",
+        "Push the mixture aside, scramble the egg, and mix with the shrimp.",
+        "Add rice and soy sauce, stir-frying until well combined."
+      ],
+      "image": "https://www.chocolatesandchai.com/wp-content/uploads/2020/12/Indonesian-Nasi-Goreng-Featured.jpeg"
+    },
+    {
+      "name": "Satay",
+      "cuisine": "Indonesian",
+      "ingredients": [
+        "chicken",
+        "peanut sauce",
+        "soy sauce",
+        "lime",
+        "garlic",
+        "ginger"
+      ],
+      "steps": [
+        "Marinate chicken pieces with soy sauce, garlic, and ginger.",
+        "Skewer the marinated chicken onto sticks.",
+        "Grill or barbecue until cooked through.",
+        "Serve with peanut sauce and a squeeze of lime."
+      ],
+      "image": "https://th.bing.com/th/id/OIP.u44jJ9BiebkxUIpNrwR2gAHaJQ?rs=1&pid=ImgDetMain"
+    },
+    {
+      "name": "Kebab",
+      "cuisine": "Middle Eastern",
+      "ingredients": ["lamb", "onions", "yogurt", "spices", "garlic"],
+      "steps": [
+        "Mix ground lamb with onions, spices, and garlic.",
+        "Shape the mixture into skewers.",
+        "Grill or cook on a stovetop until browned and cooked through.",
+        "Serve with yogurt sauce or flatbread."
+      ],
+      "image": "https://th.bing.com/th/id/OIP.HHIBY5rRTruCwbWmMqDLMQAAAA?rs=1&pid=ImgDetMain"
+    },
+    {
+      "name": "Tempura",
+      "cuisine": "Japanese",
+      "ingredients": [
+        "shrimp",
+        "vegetables",
+        "flour",
+        "egg",
+        "cold water",
+        "soy sauce",
+        "dashi"
+      ],
+      "steps": [
+        "Prepare shrimp and vegetables by cutting them into bite-sized pieces.",
+        "Make a batter by mixing flour, egg, and cold water.",
+        "Dip shrimp and vegetables into the batter.",
+        "Deep-fry in hot oil until golden and crispy.",
+        "Serve with a dipping sauce made of soy sauce and dashi."
+      ],
+      "image": "https://www.thespruceeats.com/thmb/2tTaLRT4HQZPtRFkOmU6aciIcq0=/5001x3333/filters:fill(auto,1)/basic-tempura-for-fish-and-seafood-1300531-hero-01-bbd91b4ee23940749fec5ab7693eadcc.jpg"
+    },
+    {
+      "name": "Paella",
+      "cuisine": "Spanish",
+      "ingredients": [
+        "rice",
+        "saffron",
+        "seafood",
+        "chicken",
+        "peas",
+        "bell peppers",
+        "onions"
+      ],
+      "steps": [
+        "Sauté chicken and onions in a large pan.",
+        "Add rice and saffron, stirring to coat.",
+        "Pour in broth and let it simmer.",
+        "Add seafood, peas, and bell peppers.",
+        "Cook until rice absorbs the liquid and seafood is done."
+      ],
+      "image": "https://www.jocooks.com/wp-content/uploads/2018/12/paella-1.jpg"
+    },
+    {
+      "name": "Croissant",
+      "cuisine": "French",
+      "ingredients": ["flour", "butter", "milk", "yeast", "sugar", "salt"],
+      "steps": [
+        "Mix flour, yeast, sugar, and salt with milk to make dough.",
+        "Roll out the dough and layer with butter.",
+        "Fold and roll the dough multiple times to create layers.",
+        "Shape into crescent rolls and let them rise.",
+        "Bake until golden and flaky."
+      ],
+      "image": "https://i0.wp.com/www.pardonyourfrench.com/wp-content/uploads/2019/01/Classic-French-Croissant-Recipe-69.jpg?resize=1170%2C1755"
+    },
+    {
+      "name": "Ratatouille",
+      "cuisine": "French",
+      "ingredients": [
+        "zucchini",
+        "eggplant",
+        "bell peppers",
+        "tomatoes",
+        "onions",
+        "garlic",
+        "olive oil"
+      ],
+      "steps": [
+        "Slice vegetables into even pieces.",
+        "Sauté onions and garlic in olive oil.",
+        "Layer vegetables in a baking dish, alternating colors.",
+        "Drizzle with olive oil and bake until tender.",
+        "Serve hot as a side or main dish."
+      ],
+      "image": "https://th.bing.com/th/id/OIP.dAuPW5sZ7lBy4LvTr7EycwAAAA?rs=1&pid=ImgDetMain"
+    },
+    {
+      "name": "Moussaka",
+      "cuisine": "Greek",
+      "ingredients": [
+        "eggplant",
+        "minced meat",
+        "onions",
+        "tomato sauce",
+        "bechamel sauce",
+        "cheese",
+        "olive oil"
+      ],
+      "steps": [
+        "Slice and roast eggplant until tender.",
+        "Cook minced meat with onions and tomato sauce.",
+        "Layer eggplant and meat mixture in a baking dish.",
+        "Top with bechamel sauce and cheese.",
+        "Bake until golden and bubbly."
+      ],
+      "image": "https://th.bing.com/th/id/OIP.rqwxv2CGyDPPUNWqP_OKUwHaE8?rs=1&pid=ImgDetMain"
+    },
+    {
+      "name": "Pierogi",
+      "cuisine": "Polish",
+      "ingredients": [
+        "flour",
+        "potatoes",
+        "cheese",
+        "onions",
+        "butter",
+        "eggs",
+        "sour cream"
+      ],
+      "steps": [
+        "Make dough by mixing flour, eggs, and water.",
+        "Prepare filling by mashing boiled potatoes with cheese.",
+        "Roll out dough and cut into circles.",
+        "Place filling in the center and fold into half-moons.",
+        "Boil until they float, then sauté with onions and butter."
+      ],
+      "image": "https://i0.wp.com/blogzapetytem.pl/wp-content/uploads/2020/02/900CBFB6-3EB1-4CEB-8C90-48A87E533030-scaled.jpeg?fit=2560%2C1816"
+    },
+
+    {
+      "name": "Fish and Chips",
+      "cuisine": "British",
+      "ingredients": [
+        "fish fillets",
+        "potatoes",
+        "flour",
+        "beer",
+        "oil",
+        "salt",
+        "vinegar"
+      ],
+      "steps": [
+        "Cut potatoes into thick slices and soak in water.",
+        "Coat fish fillets with a batter made of flour and beer.",
+        "Deep-fry potatoes until golden and crispy.",
+        "Fry the battered fish until cooked through and crispy.",
+        "Serve with salt and vinegar."
+      ],
+      "image": "https://th.bing.com/th/id/OIP.126G5kDgS1Ykm-Kka4uU3gHaE8?rs=1&pid=ImgDetMain"
+    },
+    {
+      "name": "Borscht",
+      "cuisine": "Ukrainian",
+      "ingredients": [
+        "beets",
+        "cabbage",
+        "carrots",
+        "potatoes",
+        "onions",
+        "sour cream",
+        "dill"
+      ],
+      "steps": [
+        "Peel and grate beets, carrots, and onions.",
+        "Simmer vegetables in a pot with broth and potatoes.",
+        "Add chopped cabbage and cook until tender.",
+        "Season with salt and pepper, then stir in fresh dill.",
+        "Serve hot with a dollop of sour cream."
+      ],
+      "image": "https://th.bing.com/th/id/OIP.fAo0CjVd4WwJRByaQApk-QHaLH?rs=1&pid=ImgDetMain"
+    },
+    {
+      "name": "Haggis",
+      "cuisine": "Scottish",
+      "ingredients": [
+        "sheep's heart",
+        "liver",
+        "onions",
+        "oatmeal",
+        "suet",
+        "spices"
+      ],
+      "steps": [
+        "Boil the sheep's heart and liver until tender, then mince.",
+        "Mix with onions, oatmeal, suet, and spices.",
+        "Stuff the mixture into a cleaned sheep's stomach.",
+        "Boil for several hours until fully cooked.",
+        "Serve with mashed potatoes and turnips."
+      ],
+      "image": "https://th.bing.com/th/id/OIP.29CJvU_pXkpfW7jzt4CjtAHaFj?rs=1&pid=ImgDetMain"
+    },
+    {
+      "name": "Irish Stew",
+      "cuisine": "Irish",
+      "ingredients": [
+        "lamb",
+        "potatoes",
+        "onions",
+        "carrots",
+        "parsley",
+        "broth"
+      ],
+      "steps": [
+        "Cut lamb, potatoes, onions, and carrots into chunks.",
+        "Layer the ingredients in a pot, starting with lamb.",
+        "Pour broth over the ingredients.",
+        "Simmer on low heat until meat is tender.",
+        "Garnish with chopped parsley and serve."
+      ],
+      "image": "https://th.bing.com/th/id/OIP.OxCZ5WwbP1rl_szOwcnKAgHaHa?rs=1&pid=ImgDetMain"
+    },
+    {
+      "name": "Burger",
+      "cuisine": "American",
+      "ingredients": [
+        "ground beef",
+        "buns",
+        "lettuce",
+        "tomatoes",
+        "cheese",
+        "onions",
+        "pickles"
+      ],
+      "steps": [
+        "Shape ground beef into patties.",
+        "Grill or pan-fry patties until cooked to desired doneness.",
+        "Toast burger buns lightly on the grill or pan.",
+        "Assemble burgers with lettuce, tomatoes, cheese, and pickles.",
+        "Serve with ketchup, mustard, or other sauces."
+      ],
+      "image": "https://th.bing.com/th/id/OIP.g_EYshV4TBrKFonMmN2KEgHaE7?rs=1&pid=ImgDetMain"
+    },
+    {
+      "name": "Hot Dog",
+      "cuisine": "American",
+      "ingredients": ["hot dog bun", "sausage", "mustard", "ketchup", "onions"],
+      "steps": [
+        "Grill or boil sausages until heated through.",
+        "Toast hot dog buns if desired.",
+        "Place the sausage in the bun.",
+        "Top with mustard, ketchup, and chopped onions.",
+        "Serve immediately."
+      ],
+      "image": "https://th.bing.com/th/id/OIP.2O8AdnHkkOX_85mIEVFV3AHaEK?rs=1&pid=ImgDetMain"
+    },
+    {
+      "name": "Apple Pie",
+      "cuisine": "American",
+      "ingredients": [
+        "apples",
+        "flour",
+        "butter",
+        "sugar",
+        "cinnamon",
+        "lemon juice"
+      ],
+      "steps": [
+        "Peel and slice apples, then mix with sugar, cinnamon, and lemon juice.",
+        "Prepare a pie crust and fill it with the apple mixture.",
+        "Cover with a top crust and seal edges.",
+        "Bake at 375°F (190°C) until the crust is golden brown.",
+        "Cool slightly before serving."
+      ],
+      "image": "https://lexiscleankitchen.com/wp-content/uploads/2018/07/Paleo-Apple-Pie.jpg"
+    },
+    {
+      "name": "Feijoada",
+      "cuisine": "Brazilian",
+      "ingredients": [
+        "black beans",
+        "pork",
+        "beef",
+        "onions",
+        "garlic",
+        "oranges"
+      ],
+      "steps": [
+        "Soak black beans overnight, then drain.",
+        "Cook pork and beef with onions and garlic.",
+        "Add the beans and water, then simmer until tender.",
+        "Serve with rice, collard greens, and orange slices."
+      ],
+      "image": "https://steamuserimages-a.akamaihd.net/ugc/955210055781669591/BE27788B8D262AC94AD455218C7BA6FFECD500B1/"
+    },
+    {
+      "name": "Butter Tarts",
+      "cuisine": "Canadian",
+      "ingredients": ["pastry", "butter", "sugar", "eggs", "raisins"],
+      "steps": [
+        "Prepare or buy tart shells.",
+        "Mix butter, sugar, eggs, and raisins to make the filling.",
+        "Fill tart shells with the mixture.",
+        "Bake at 350°F (175°C) until the filling is set and golden."
+      ],
+      "image": "https://i.pinimg.com/originals/b0/bb/df/b0bbdfe112dee7accf96e64c92da53ee.jpg"
+    },
+    {
+      "name": "Poutine",
+      "cuisine": "Canadian",
+      "ingredients": ["french fries", "cheese curds", "gravy"],
+      "steps": [
+        "Fry or bake french fries until crispy.",
+        "Layer fries with cheese curds.",
+        "Pour hot gravy over the top.",
+        "Serve immediately."
+      ],
+      "image": "https://cdn.tasteatlas.com/images/recipes/88753ad52d2443468569929cf7ba6468.jpg?mw=1300"
+    },
+    {
+      "name": "Jollof Rice",
+      "cuisine": "West African",
+      "ingredients": [
+        "rice",
+        "tomatoes",
+        "onions",
+        "peppers",
+        "spices",
+        "chicken"
+      ],
+      "steps": [
+        "Blend tomatoes, onions, and peppers into a puree.",
+        "Cook chicken with spices, then remove and set aside.",
+        "Sauté the tomato puree in oil with spices.",
+        "Add rice and broth, then cook until tender.",
+        "Serve with the chicken and vegetables."
+      ],
+      "image": "https://wazobiaafricankitchen.com/wp-content/uploads/food34.jpg"
+    },
+    {
+      "name": "Tiramisu",
+      "cuisine": "Italian",
+      "ingredients": [
+        "mascarpone cheese",
+        "ladyfingers",
+        "coffee",
+        "cocoa powder",
+        "sugar"
+      ],
+      "steps": [
+        "Mix mascarpone cheese with sugar until smooth.",
+        "Dip ladyfingers briefly in coffee.",
+        "Layer dipped ladyfingers and mascarpone mixture in a dish.",
+        "Repeat layers and dust with cocoa powder on top.",
+        "Chill for several hours before serving."
+      ],
+      "image": "https://th.bing.com/th/id/OIP.20UKuWOwLXuehSr2C65Y6QHaE8?rs=1&pid=ImgDetMain"
+    }
+  ]
+}

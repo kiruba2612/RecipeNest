@@ -1,0 +1,38 @@
+<link rel="stylesheet" href="/css/navbar.css" />
+<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark shadow-sm">
+  <div class="container-fluid">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div
+      class="collapse navbar-collapse justify-content-end"
+      id="navbarNavAltMarkup"
+    >
+      <div class="navbar-nav">
+        <a class="nav-link active" href="/">Home</a>
+      </div>
+      <div class="navbar-nav ms-3">
+        <a class="nav-link" href="/new">New Recipe</a>
+        <a class="nav-link" href="/meal">Meal Planner</a>
+        <!-- Logout form -->
+        <form id="logoutForm" action="/logout" method="POST" class="d-inline">
+          <button
+            type="submit"
+            class="nav-link btn btn-link text-white p-0 border-0"
+            style="cursor: pointer"
+          >
+            Logout
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</nav>
