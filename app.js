@@ -18,7 +18,7 @@ const Reciperoute = require("./routes/reciperoute");
 
 // DB Connection
 
-mongoose.connect("mongodb://localhost:27017/recipe");
+mongoose.connect(process.env.MONGODB_URI);
 
 const db = mongoose.connection;
 
