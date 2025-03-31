@@ -1,0 +1,175 @@
+<%- include('../layouts/boilerplate') %>
+<link rel="stylesheet" href="/css/meal.css" />
+
+<section id="meal-planner" class="meal-planner section-container text-center">
+  <div class="container">
+    <div class="card">
+      <h2 class="section-title">Plan Your Meals Effortlessly</h2>
+      <p class="section-description">
+        Use our dynamic meal planner to create a personalized meal plan that
+        suits your dietary needs.
+      </p>
+      <form id="mealForm">
+        <div class="mb-3">
+          <label for="category" class="form-label">Select Category</label>
+          <div class="dropdown-wrapper">
+            <select class="form-select custom-dropdown" id="category" required>
+              <option value="adult">👨‍💼 Adult</option>
+              <option value="elder">👴 Elder</option>
+              <option value="kids">🧒 Kids</option>
+            </select>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="health" class="form-label">Select Health Condition</label>
+          <div class="dropdown-wrapper">
+            <select class="form-select custom-dropdown" id="health" required>
+              <option value="normal">✅ Normal</option>
+              <option value="diabetes">🩸 Diabetes</option>
+              <option value="heart">❤️ Heart Condition</option>
+              <option value="obesity">⚖️ Obesity</option>
+              <option value="hypertension">💢 Hypertension</option>
+              <option value="cholesterol">🛑 High Cholesterol</option>
+            </select>
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="duration" class="form-label">Select Duration</label>
+          <div class="dropdown-wrapper">
+            <select class="form-select custom-dropdown" id="duration" required>
+              <option value="day">📅 One Day</option>
+              <option value="week">📆 One Week</option>
+              <option value="month">🗓️ One Month</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-center gap-2 mt-3">
+          <button type="submit" class="btn btn-primary mx-2">
+            Generate Plan
+          </button>
+          <button id="copyPlan" class="btn btn-success mx-2">📋</button>
+          <button id="togglePlan" class="btn btn-warning mx-2">⬆</button>
+        </div>
+      </form>
+
+      <div id="mealPlan" class="mt-1 mb-1"></div>
+
+      <button onclick="window.location.href='/'" class="btn btn-secondary mt-3">
+        Go Home
+      </button>
+    </div>
+  </div>
+</section>
+
+<div id="copyNotification" class="copy-toast">✔ Meal Plan Copied!</div>
+
+<style>
+  .copy-toast {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: opacity 0.5s ease-in-out;
+  }
+</style>
+
+<script>
+  document
+    .getElementById("mealForm")
+    .addEventListener("submit", function (event) {
+      event.preventDefault();
+      const category = document.getElementById("category").value;
+      const health = document.getElementById("health").value;
+      const duration = document.getElementById("duration").value;
+      generateMealPlan(category, health, duration);
+    });
+
+  function generateMealPlan(category, health, duration) {
+    let mealPlans = {
+      adult: {
+        normal: ["Whole grains, vegetables, nuts, dairy, lean meats."],
+        diabetes: ["Whole grains, nuts, green vegetables, lean protein."],
+        heart: ["Salmon, walnuts, olive oil, green tea, oats."],
+        obesity: ["Leafy greens, nuts, seeds, healthy fats."],
+        hypertension: ["Steamed fish, olive oil, vegetables, unsalted nuts."],
+        cholesterol: ["Oats, flaxseeds, almonds, berries, fish."],
+      },
+      elder: {
+        normal: ["Mashed potatoes, yogurt, soups, smoothies."],
+        diabetes: ["Brown rice, dal, leafy greens, nuts."],
+        heart: ["Steamed vegetables, olive oil, lean fish, herbal tea."],
+        obesity: ["Porridge, stewed fruits, lentil soups."],
+        hypertension: ["Fresh vegetables, fruits, unprocessed grains."],
+        cholesterol: ["Almonds, salmon, green tea, whole wheat."],
+      },
+      kids: {
+        normal: ["Eggs, milk, bananas, lentils, whole wheat."],
+        diabetes: ["Whole grains, green vegetables, nuts."],
+        heart: ["Fish, walnuts, avocados, low-fat yogurt."],
+        obesity: ["Lean protein, vegetables, fruits, nuts."],
+        hypertension: ["Steamed veggies, unsalted snacks, fresh fruits."],
+        cholesterol: ["Oats, nuts, whole wheat, lean protein."],
+      },
+    };
+
+    let plan = mealPlans[category][health].join("<br>");
+
+    let mealPlanDiv = document.getElementById("mealPlan");
+    mealPlanDiv.innerHTML = `<div class='card p-3' id='planContent'>
+                    <h4 class="mb-3">${duration.toUpperCase()} Meal Plan for ${category.toUpperCase()} (${health.toUpperCase()})</h4>
+                    <p><strong>Diet Plan:</strong><br> ${plan}</p>
+                </div>`;
+
+    // Ensure the meal plan is visible when generated
+    mealPlanDiv.style.display = "block";
+    document.getElementById("togglePlan").innerText = "⬆";
+  }
+
+  document
+    .getElementById("copyPlan")
+    .addEventListener("click", function (event) {
+      event.preventDefault();
+      let planContent = document.getElementById("planContent");
+      if (planContent) {
+        let planText = planContent.innerText;
+        navigator.clipboard.writeText(planText).then(() => {
+          let toast = document.getElementById("copyNotification");
+          toast.style.display = "block";
+          toast.style.opacity = "1";
+
+          setTimeout(() => {
+            toast.style.opacity = "0";
+            setTimeout(() => (toast.style.display = "none"), 500);
+          }, 3000);
+        });
+      }
+    });
+
+  document
+    .getElementById("togglePlan")
+    .addEventListener("click", function (event) {
+      event.preventDefault();
+      let mealPlanDiv = document.getElementById("mealPlan");
+      let toggleBtn = document.getElementById("togglePlan");
+
+      if (
+        mealPlanDiv.style.display === "none" ||
+        mealPlanDiv.innerHTML.trim() === ""
+      ) {
+        mealPlanDiv.style.display = "block";
+        toggleBtn.innerText = "⬆";
+      } else {
+        mealPlanDiv.style.display = "none";
+        toggleBtn.innerText = "⬇";
+      }
+    });
+</script>

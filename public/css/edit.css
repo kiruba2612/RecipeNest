@@ -1,0 +1,90 @@
+/* Body Background */
+body {
+  min-height: 60vh;
+  margin-top: 70px; /* Space for navbar */
+  padding-bottom: 80px;
+  background: url("/image/table-leaves-shape.png") repeat center center/cover;
+}
+
+/* Recipe Form Section */
+.recipe-form-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Form Container */
+.recipe-form-section .container {
+  max-width: 650px;
+  background: white;
+  padding: 50px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  margin-bottom: 80px; /* Extra space at the bottom */
+}
+
+/* Form Headings */
+.recipe-form-section h1 {
+  color: #007bff;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Input Fields */
+.recipe-form-section .form-control {
+  border: 2px solid #007bff;
+  border-radius: 6px;
+  padding: 12px;
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.recipe-form-section .form-control:focus {
+  border-color: #0056b3;
+  box-shadow: 0 0 6px rgba(0, 123, 255, 0.5);
+}
+
+/* Labels */
+.recipe-form-section .form-label {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+/* Buttons */
+.recipe-form-section .btn {
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Button Colors */
+.recipe-form-section .btn-success {
+  background-color: #28a745;
+  border: none;
+}
+
+.recipe-form-section .btn-success:hover {
+  background-color: #218838;
+}
+
+.recipe-form-section .btn-primary {
+  background-color: #007bff;
+  border: none;
+}
+
+.recipe-form-section .btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* Centered Buttons with Spacing */
+.recipe-form-section .d-flex.gap-3 {
+  justify-content: center;
+  gap: 15px;
+}
+
+/* Button Shadows */
+.recipe-form-section .btn.shadow {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}

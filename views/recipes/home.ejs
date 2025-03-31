@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipe Nest</title>
+    <link rel="icon" type="image/png" href="/image/titlelogo.png" />
+    <!-- for icons  -->
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
+    <!-- bootstrap  -->
+    <link rel="stylesheet" href="/css/homecss/bootstrap.min.css" />
+    <!-- for swiper slider  -->
+    <link rel="stylesheet" href="/css/homecss/swiper-bundle.min.css" />
+
+    <!-- fancy box  -->
+    <link rel="stylesheet" href="/css/homecss/jquery.fancybox.min.css" />
+    <!-- custom css  -->
+    <link rel="stylesheet" href="/css/homecss/style.css" />
+  </head>
+
+  <body class="body-fixed">
+    <!-- start of header  -->
+    <header class="site-header">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-2">
+            <div class="header-logo">
+              <a href="/recipe">
+                <img src="/image/og.png" width="70" height="70" alt="Logo" />
+              </a>
+            </div>
+          </div>
+          <div
+            class="col-lg-10 d-flex justify-content-between align-items-center"
+          >
+            <div class="main-navigation">
+              <button class="menu-toggle"><span></span><span></span></button>
+              <nav class="header-menu">
+                <ul class="menu food-nav-menu">
+                  <% if (currentuser) { %>
+                  <li><a href="/new">New Recipe</a></li>
+                  <li>
+                    <form
+                      id="logoutForm"
+                      action="/logout"
+                      method="POST"
+                      style="display: inline"
+                    >
+                      <button
+                        type="submit"
+                        class="logout-link text-dark fb fw-bold"
+                      >
+                        Logout
+                      </button>
+                    </form>
+                  </li>
+                  <% } else { %>
+                  <li><a href="/login">Login</a></li>
+                  <li><a href="/register">Register</a></li>
+                  <% } %>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- header ends  -->
+
+    <div id="viewport">
+      <div id="js-scroll-content">
+        <section class="main-banner" id="home">
+          <div class="js-parallax-scene">
+            <div class="banner-shape-1 w-100" data-depth="0.30">
+              <img src="/image/berry.png" alt="" />
+            </div>
+            <div class="banner-shape-2 w-100" data-depth="0.25">
+              <img src="/image/leaf.png" alt="" />
+            </div>
+          </div>
+          <div class="sec-wp">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="banner-text">
+                    <h1 class="h1-title">
+                      Welcome To
+                      <span>Recipe Nest</span>
+                    </h1>
+                    <p>Where Flavor Meets a Home!</p>
+                    <div class="banner-btn mt-4">
+                      <a href="/recipe" class="sec-btn">Check Our Recipes</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="banner-img-wp">
+                    <div
+                      class="banner-img"
+                      style="background-image: url(/image/main-b.jpg)"
+                    ></div>
+                  </div>
+                  <div class="banner-img-text mt-4 m-auto">
+                    <h5 class="h5-title">Sushi</h5>
+                    <p>
+                      Sushi is a Japanese dish of vinegared rice, seafood, and
+                      vegetables, served in various styles like rolls (maki) and
+                      hand-pressed (nigiri). It's known for its fresh flavors
+                      and artistic presentation.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- dish cuisine -->
+        <section
+          style="background-image: url(/image/menu-bg.png)"
+          class="our-menu section bg-light repeat-img"
+          id="menu"
+        >
+          <div class="sec-wp">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="sec-title text-center mb-5">
+                    <h2 class="h2-title">
+                      <span>eat fresh & healthy</span>
+                    </h2>
+                    <div class="sec-title-shape mb-4">
+                      <img src="/image/title-shape.svg" alt="" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="menu-tab-wp">
+                <div class="row">
+                  <div class="col-lg-12 m-auto">
+                    <div class="menu-tab text-center">
+                      <ul class="filters">
+                        <div class="filter-active"></div>
+                        <li
+                          class="filter"
+                          data-filter=".all, .breakfast, .lunch, .dinner"
+                        >
+                          <img src="/image/menu-1.png" alt="" />
+                          All
+                        </li>
+                        <li class="filter" data-filter=".breakfast">
+                          <img src="/image/menu-2.png" alt="" />
+                          Breakfast
+                        </li>
+                        <li class="filter" data-filter=".lunch">
+                          <img src="/image/menu-3.png" alt="" />
+                          Lunch
+                        </li>
+                        <li class="filter" data-filter=".dinner">
+                          <img src="/image/menu-4.png" alt="" />
+                          Dinner
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="menu-list-row">
+                <div class="row g-xxl-5 bydefault_show" id="menu-dish">
+                  <div
+                    class="col-lg-4 col-sm-6 dish-box-wp breakfast"
+                    data-cat="breakfast"
+                  >
+                    <div class="dish-box text-center">
+                      <div class="dist-img">
+                        <img src="/image/dish/1.png" alt="" />
+                      </div>
+                      <div class="dish-rating">
+                        5
+                        <i class="uil uil-star"></i>
+                      </div>
+                      <div class="dish-title">
+                        <h3 class="h3-title">Fresh Chicken Veggies</h3>
+                        <p>120 calories</p>
+                      </div>
+                      <div class="dish-info">
+                        <ul>
+                          <li>
+                            <p>Type</p>
+                            <b>Non Veg</b>
+                          </li>
+                          <li>
+                            <p>Cuisine</p>
+                            <b>Indian</b>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- 2 -->
+                  <div
+                    class="col-lg-4 col-sm-6 dish-box-wp breakfast"
+                    data-cat="breakfast"
+                  >
+                    <div class="dish-box text-center">
+                      <div class="dist-img">
+                        <img src="/image/dish/2.png" alt="" />
+                      </div>
+                      <div class="dish-rating">
+                        4.3
+                        <i class="uil uil-star"></i>
+                      </div>
+                      <div class="dish-title">
+                        <h3 class="h3-title">Grilled Chicken</h3>
+                        <p>80 calories</p>
+                      </div>
+                      <div class="dish-info">
+                        <ul>
+                          <li>
+                            <p>Type</p>
+                            <b>Non Veg</b>
+                          </li>
+                          <li>
+                            <p>Cuisine</p>
+                            <b>American</b>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- 3 -->
+                  <div
+                    class="col-lg-4 col-sm-6 dish-box-wp lunch"
+                    data-cat="lunch"
+                  >
+                    <div class="dish-box text-center">
+                      <div class="dist-img">
+                        <img src="/image/dish/3.png" alt="" />
+                      </div>
+                      <div class="dish-rating">
+                        4
+                        <i class="uil uil-star"></i>
+                      </div>
+                      <div class="dish-title">
+                        <h3 class="h3-title">Panner Noodles</h3>
+                        <p>100 calories</p>
+                      </div>
+                      <div class="dish-info">
+                        <ul>
+                          <li>
+                            <p>Type</p>
+                            <b>Veg</b>
+                          </li>
+                          <li>
+                            <p>Cuisine</p>
+                            <b>Indo-Chinese</b>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- 4 -->
+                  <div
+                    class="col-lg-4 col-sm-6 dish-box-wp lunch"
+                    data-cat="lunch"
+                  >
+                    <div class="dish-box text-center">
+                      <div class="dist-img">
+                        <img src="/image/dish/4.png" alt="" />
+                      </div>
+                      <div class="dish-rating">
+                        4.5
+                        <i class="uil uil-star"></i>
+                      </div>
+                      <div class="dish-title">
+                        <h3 class="h3-title">Chicken Noodles</h3>
+                        <p>120 calories</p>
+                      </div>
+                      <div class="dish-info">
+                        <ul>
+                          <li>
+                            <p>Type</p>
+                            <b>Non Veg</b>
+                          </li>
+                          <li>
+                            <p>Cuisine</p>
+                            <b>Asian</b>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- 5 -->
+                  <div
+                    class="col-lg-4 col-sm-6 dish-box-wp dinner"
+                    data-cat="dinner"
+                  >
+                    <div class="dish-box text-center">
+                      <div class="dist-img">
+                        <img src="/image/dish/5.png" alt="" />
+                      </div>
+                      <div class="dish-rating">
+                        5
+                        <i class="uil uil-star"></i>
+                      </div>
+                      <div class="dish-title">
+                        <h3 class="h3-title">Bread Boiled Egg</h3>
+                        <p>120 calories</p>
+                      </div>
+                      <div class="dish-info">
+                        <ul>
+                          <li>
+                            <p>Type</p>
+                            <b>Non Veg</b>
+                          </li>
+                          <li>
+                            <p>Cuisine</p>
+                            <b>Middle-Eastern</b>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- 6 -->
+                  <div
+                    class="col-lg-4 col-sm-6 dish-box-wp dinner"
+                    data-cat="dinner"
+                  >
+                    <div class="dish-box text-center">
+                      <div class="dist-img">
+                        <img src="/image/dish/6.png" alt="" />
+                      </div>
+                      <div class="dish-rating">
+                        5
+                        <i class="uil uil-star"></i>
+                      </div>
+                      <div class="dish-title">
+                        <h3 class="h3-title">Immunity Dish</h3>
+                        <p>120 calories</p>
+                      </div>
+                      <div class="dish-info">
+                        <ul>
+                          <li>
+                            <p>Type</p>
+                            <b>Veg</b>
+                          </li>
+                          <li>
+                            <p>Cuisine</p>
+                            <b>Japanese</b>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="two-col-sec section">
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-lg-5">
+                <div class="sec-img mt-5">
+                  <img src="/image/pizza.png" alt="" />
+                </div>
+              </div>
+              <div class="col-lg-7">
+                <div class="sec-text">
+                  <h2 class="xxl-title">Margherita Pizza</h2>
+                  <p>
+                    Margherita pizza is a classic Italian dish known for its
+                    simple yet delicious flavors. Originating from Naples, it
+                    features a thin, crispy crust topped with fresh tomato
+                    sauce, mozzarella cheese, and basil, representing the colors
+                    of the Italian flag. Baked in a wood-fired oven, this pizza
+                    is loved for its light, fresh taste and authentic Italian
+                    essence.
+                  </p>
+                  <p>
+                    Margherita pizza is a classic Italian dish with a thin
+                    crust, tomato sauce, mozzarella cheese, and fresh basil,
+                    symbolizing the Italian flag. It's known for its simple,
+                    fresh flavors and traditional Neapolitan roots.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="two-col-sec section pt-0">
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-lg-6 order-lg-1 order-2">
+                <div class="sec-text">
+                  <h2 class="xxl-title">Sushi Rolls</h2>
+                  <p>
+                    Sushi rolls, or maki, are a popular Japanese dish made by
+                    rolling vinegared rice, seafood, vegetables, and seaweed
+                    (nori). Variations include classic maki, uramaki (inside-out
+                    rolls), and futomaki (thick rolls). They are served with soy
+                    sauce, wasabi, and pickled ginger, offering a balance of
+                    fresh flavors and textures.
+                  </p>
+                  <p>
+                    Sushi rolls are a classic Japanese dish made with vinegared
+                    rice, seafood, vegetables, and seaweed. They come in various
+                    styles like maki and uramaki, offering a fresh, umami-rich
+                    taste. Served with soy sauce, wasabi, and pickled ginger,
+                    they reflect Japan's tradition of simplicity and precision
+                    in cooking.
+                  </p>
+                </div>
+              </div>
+              <div class="col-lg-6 order-lg-2 order-1">
+                <div class="sec-img">
+                  <img src="/image/sushi.png" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- carousal -->
+        <div class="container m-5">
+          <h2 class="section-title text-center">Cooking Tips</h2>
+          <div
+            id="cookingTipsCarousel"
+            class="carousel slide"
+            data-bs-ride="carousel"
+          >
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="card shadow-lg border-0">
+                      <img
+                        src="/image/carousal/1.jpg"
+                        class="d-block w-100"
+                        alt="Tip 1"
+                        style="
+                          height: 400px;
+                          object-fit: contain;
+                          border-radius: 10px;
+                        "
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="card shadow-lg border-0">
+                      <img
+                        src="/image/carousal/2.jpg"
+                        class="d-block w-100"
+                        alt="Tip 2"
+                        style="
+                          height: 400px;
+                          object-fit: contain;
+                          border-radius: 10px;
+                        "
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="card shadow-lg border-0">
+                      <img
+                        src="/image/carousal/3.jpg"
+                        class="d-block w-100"
+                        alt="Tip 3"
+                        style="
+                          height: 400px;
+                          object-fit: contain;
+                          border-radius: 10px;
+                        "
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Additional slides for 24 images -->
+              <div class="carousel-item">
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="card shadow-lg border-0">
+                      <img
+                        src="/image/carousal/4.jpg"
+                        class="d-block w-100"
+                        alt="Tip 4"
+                        style="
+                          height: 400px;
+                          object-fit: contain;
+                          border-radius: 10px;
+                        "
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="card shadow-lg border-0">
+                      <img
+                        src="/image/carousal/5.jpg"
+                        class="d-block w-100"
+                        alt="Tip 5"
+                        style="
+                          height: 400px;
+                          object-fit: contain;
+                          border-radius: 10px;
+                        "
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="card shadow-lg border-0">
+                      <img
+                        src="/image/carousal/6.jpg"
+                        class="d-block w-100"
+                        alt="Tip 6"
+                        style="
+                          height: 400px;
+                          object-fit: contain;
+                          border-radius: 10px;
+                        "
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="carousel-item">
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="card shadow-lg border-0">
+                      <img
+                        src="/image/carousal/7.jpg"
+                        class="d-block w-100"
+                        alt="Tip 7"
+                        style="
+                          height: 400px;
+                          object-fit: contain;
+                          border-radius: 10px;
+                        "
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="card shadow-lg border-0">
+                      <img
+                        src="/image/carousal/8.jpg"
+                        class="d-block w-100"
+                        alt="Tip 8"
+                        style="
+                          height: 400px;
+                          object-fit: contain;
+                          border-radius: 10px;
+                        "
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="card shadow-lg border-0">
+                      <img
+                        src="/image/carousal/9.jpg"
+                        class="d-block w-100"
+                        alt="Tip 9"
+                        style="
+                          height: 400px;
+                          object-fit: contain;
+                          border-radius: 10px;
+                        "
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="carousel-item">
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="card shadow-lg border-0">
+                      <img
+                        src="/image/carousal/10.jpg"
+                        class="d-block w-100"
+                        alt="Tip 10"
+                        style="
+                          height: 400px;
+                          object-fit: contain;
+                          border-radius: 10px;
+                        "
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="card shadow-lg border-0">
+                      <img
+                        src="/image/carousal/11.jpg"
+                        class="d-block w-100"
+                        alt="Tip 11"
+                        style="
+                          height: 400px;
+                          object-fit: contain;
+                          border-radius: 10px;
+                        "
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="card shadow-lg border-0">
+                      <img
+                        src="/image/carousal/12.jpg"
+                        class="d-block w-100"
+                        alt="Tip 12"
+                        style="
+                          height: 400px;
+                          object-fit: contain;
+                          border-radius: 10px;
+                        "
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="carousel-item">
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="card shadow-lg border-0">
+                      <img
+                        src="/image/carousal/13.jpg"
+                        class="d-block w-100"
+                        alt="Tip 13"
+                        style="
+                          height: 400px;
+                          object-fit: contain;
+                          border-radius: 10px;
+                        "
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="card shadow-lg border-0">
+                      <img
+                        src="/image/carousal/14.jpg"
+                        class="d-block w-100"
+                        alt="Tip 14"
+                        style="
+                          height: 400px;
+                          object-fit: contain;
+                          border-radius: 10px;
+                        "
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="card shadow-lg border-0">
+                      <img
+                        src="/image/carousal/15.jpg"
+                        class="d-block w-100"
+                        alt="Tip 15"
+                        style="
+                          height: 400px;
+                          object-fit: contain;
+                          border-radius: 10px;
+                        "
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="carousel-item">
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="card shadow-lg border-0">
+                      <img
+                        src="/image/carousal/16.jpg"
+                        class="d-block w-100"
+                        alt="Tip 16"
+                        style="
+                          height: 400px;
+                          object-fit: contain;
+                          border-radius: 10px;
+                        "
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="card shadow-lg border-0">
+                      <img
+                        src="/image/carousal/17.jpg"
+                        class="d-block w-100"
+                        alt="Tip 17"
+                        style="
+                          height: 400px;
+                          object-fit: contain;
+                          border-radius: 10px;
+                        "
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="card shadow-lg border-0">
+                      <img
+                        src="/image/carousal/18.jpg"
+                        class="d-block w-100"
+                        alt="Tip 18"
+                        style="
+                          height: 400px;
+                          object-fit: contain;
+                          border-radius: 10px;
+                        "
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="carousel-item">
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="card shadow-lg border-0">
+                      <img
+                        src="/image/carousal/19.jpg"
+                        class="d-block w-100"
+                        alt="Tip 19"
+                        style="
+                          height: 400px;
+                          object-fit: contain;
+                          border-radius: 10px;
+                        "
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="card shadow-lg border-0">
+                      <img
+                        src="/image/carousal/20.jpg"
+                        class="d-block w-100"
+                        alt="Tip 20"
+                        style="
+                          height: 400px;
+                          object-fit: contain;
+                          border-radius: 10px;
+                        "
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="card shadow-lg border-0">
+                      <img
+                        src="/image/carousal/21.jpg"
+                        class="d-block w-100"
+                        alt="Tip 21"
+                        style="
+                          height: 400px;
+                          object-fit: contain;
+                          border-radius: 10px;
+                        "
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="carousel-item">
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="card shadow-lg border-0">
+                      <img
+                        src="/image/carousal/22.jpg"
+                        class="d-block w-100"
+                        alt="Tip 19"
+                        style="
+                          height: 400px;
+                          object-fit: contain;
+                          border-radius: 10px;
+                        "
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="card shadow-lg border-0">
+                      <img
+                        src="/image/carousal/23.jpg"
+                        class="d-block w-100"
+                        alt="Tip 20"
+                        style="
+                          height: 400px;
+                          object-fit: contain;
+                          border-radius: 10px;
+                        "
+                      />
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="card shadow-lg border-0">
+                      <img
+                        src="/image/carousal/24.jpg"
+                        class="d-block w-100"
+                        alt="Tip 21"
+                        style="
+                          height: 400px;
+                          object-fit: contain;
+                          border-radius: 10px;
+                        "
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#cookingTipsCarousel"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#cookingTipsCarousel"
+              data-bs-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+            </button>
+          </div>
+        </div>
+
+        <!-- end -->
+
+        <section
+          class="faq-sec section-repeat-img"
+          style="background-image: url(/image/faq-bg.png)"
+        >
+          <div class="sec-wp">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="sec-title text-center mb-5">
+                    <p class="sec-sub-title mb-3">faqs</p>
+                    <h2 class="h2-title">
+                      Frequently <span>asked questions</span>
+                    </h2>
+                    <div class="sec-title-shape mb-4">
+                      <img src="/image/title-shape.svg" alt="" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="faq-row">
+                <div class="faq-box">
+                  <h4 class="h4-title">Do I need an account to use the app?</h4>
+                  <p>
+                    You can browse recipes without an account, but signing up
+                    allows you to edit, and share your own recipes.
+                  </p>
+                </div>
+                <div class="faq-box">
+                  <h4 class="h4-title">
+                    Can i upload my own recipe on this app?
+                  </h4>
+                  <p>
+                    Yes! You can add or remove any recipe you've created through
+                    the “New Recipe” section and share with other users.
+                  </p>
+                </div>
+                <div class="faq-box">
+                  <h4 class="h4-title">
+                    Can I use grilled chicken instead of fried?
+                  </h4>
+                  <p>
+                    Yes! You can use a grilled chicken patty for a healthier
+                    option while keeping the nuggets crispy for extra crunch
+                  </p>
+                </div>
+                <div class="faq-box">
+                  <h4 class="h4-title">
+                    How do I make a crispy chicken burger with nuggets?
+                  </h4>
+                  <p>
+                    Cook a chicken patty and nuggets, toast the bun, add sauce,
+                    lettuce, and tomato, then stack the patty and nuggets.
+                  </p>
+                </div>
+                <div class="faq-box">
+                  <h4 class="h4-title">
+                    How can I find specific recipes in the app?
+                  </h4>
+                  <p>
+                    Use the search bar to look up recipes by name, ingredients,
+                    or categories like vegetarian, keto, or quick meals.
+                  </p>
+                </div>
+                <div class="faq-box">
+                  <h4 class="h4-title">
+                    Can I substitute ingredients in a recipe?
+                  </h4>
+                  <p>
+                    Yes! You can swap ingredients based on your dietary needs or
+                    preferences. The app may also suggest alternatives.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div
+          class="bg-pattern bg-light repeat-img"
+          style="background-image: url(/image/blog-pattern-bg.png)"
+        >
+          <section class="blog-sec section" id="blog">
+            <div class="sec-wp">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-12">
+                    <div class="sec-title text-center mb-5">
+                      <p class="sec-sub-title mb-3">Our blog</p>
+                      <h2 class="h2-title">Latest Publications</h2>
+                      <div class="sec-title-shape mb-4">
+                        <img src="/image/title-shape.svg" alt="" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-lg-4">
+                    <div class="blog-box">
+                      <div
+                        class="blog-img back-img"
+                        style="background-image: url(/image/blog/blog1.jpg)"
+                      ></div>
+                      <div class="blog-text">
+                        <p class="blog-date">Febrauary.14.2025</p>
+                        <a href="#" class="h4-title">Chocolate Milk</a>
+                        <p>
+                          Use High-Quality Ingredients Choose good cocoa powder
+                          or chocolate syrup for the best taste. Mix Cocoa
+                          Powder Properly If using cocoa powder, dissolve it in
+                          a little warm milk or water before adding cold milk to
+                          avoid lumps. Sweeten to Taste Adjust sugar, honey, or
+                          sweetener based on preference. Chill for Better Flavor
+                          Refrigerate for a few minutes after mixing for a
+                          smoother, richer taste. Blend for Creaminess Use a
+                          blender for a frothy texture. Enhance with Extras Add
+                          vanilla extract, cinnamon, or a pinch of salt for
+                          depth.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4">
+                    <div class="blog-box">
+                      <div
+                        class="blog-img back-img"
+                        style="background-image: url(/image/blog/blog2.jpg)"
+                      ></div>
+                      <div class="blog-text">
+                        <p class="blog-date">January.17.2025</p>
+                        <a href="#" class="h4-title">Fresh Veggie and rice</a>
+                        <p>
+                          Cook the Rice If not already cooked, prepare the rice
+                          and set it aside. Sauté the Aromatics Heat oil or
+                          butter in a pan, add minced garlic, and sauté until
+                          fragrant. Cook the Veggies Add chopped vegetables and
+                          stir-fry on medium heat for 3-4 minutes until slightly
+                          tender but still crisp. Mix with Rice Add the cooked
+                          rice to the pan, season with salt, pepper, and
+                          optional soy sauce or herbs. Final Touch Stir well,
+                          cook for another minute, then turn off the heat. Serve
+                          Warm Enjoy as a light meal or pair it with a side of
+                          protein like grilled chicken or tofu
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4">
+                    <div class="blog-box">
+                      <div
+                        class="blog-img back-img"
+                        style="background-image: url(/image/blog/blog3.jpg)"
+                      ></div>
+                      <div class="blog-text">
+                        <p class="blog-date">November.15.2024</p>
+                        <a href="#" class="h4-title"
+                          >Chicken burger with double nuggets</a
+                        >
+                        <p>
+                          Cook the Rice If not already cooked, prepare the rice
+                          and set it aside. Sauté the Aromatics Heat oil or
+                          butter in a pan, add minced garlic, and sauté until
+                          fragrant. Cook the Veggies Add chopped vegetables and
+                          stir-fry on medium heat for 3-4 minutes until slightly
+                          tender but still crisp. Mix with Rice Add the cooked
+                          rice to the pan, season with salt, pepper, and
+                          optional soy sauce or herbs. Final Touch Stir well,
+                          cook for another minute, then turn off the heat. Serve
+                          Warm Enjoy as a light meal or pair it with a side of
+                          protein like grilled chicken or tofu
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- footer starts  -->
+        <footer class="site-footer" id="contact">
+          <div class="top-footer section">
+            <div class="sec-wp">
+              <div class="container">
+                <div class="row">
+                  <div class="col-lg-4">
+                    <div class="footer-info">
+                      <div class="footer-logo">
+                        <a href="index.html">
+                          <img src="/image/og.png" alt="logo" />
+                        </a>
+                      </div>
+                      <p>
+                        Recipe Nest - Where Flavors Meet Home. Discover,
+                        create,and share delicious recipes effortlessly,
+                        bringing the warmth of home-cooked meals to every
+                        kitchen through our recipes.
+                      </p>
+                      <div class="social-icon">
+                        <ul>
+                          <li>
+                            <a href="#">
+                              <i class="uil uil-facebook-f"></i>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              <i class="uil uil-instagram"></i>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              <i class="uil uil-github-alt"></i>
+                            </a>
+                          </li>
+                          <li>
+                            <a href="#">
+                              <i class="uil uil-youtube"></i>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-8">
+                    <div class="footer-flex-box">
+                      <div class="footer-table-info">
+                        <h3 class="h3-title">Gastronomy</h3>
+                        <ul>
+                          <li>Asian Cuisine</li>
+                          <li>European Cuisine</li>
+                          <li>Middle Eastern Cuisine</li>
+                          <li>African Cuisine</li>
+                          <li>American Cuisine</li>
+                        </ul>
+                      </div>
+                      <div class="footer-menu food-nav-menu">
+                        <h3 class="h3-title">Links</h3>
+                        <ul class="column-2">
+                          <li>
+                            <a href="#home" class="footer-active-menu">Home</a>
+                          </li>
+                          <li><a href="#about">About</a></li>
+                          <li><a href="#menu">Menu</a></li>
+                          <li><a href="#gallery">Gallery</a></li>
+                          <li><a href="#blog">Blog</a></li>
+                          <li><a href="#contact">Contact</a></li>
+                        </ul>
+                      </div>
+                      <div class="footer-menu">
+                        <h3 class="h3-title">Company</h3>
+                        <ul>
+                          <li><a href="#">Terms & Conditions</a></li>
+                          <li><a href="#">Privacy Policy</a></li>
+                          <li><a href="#">Cookie Policy</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bottom-footer">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-12 text-center">
+                  <div class="copyright-text">
+                    <p>
+                      Copyright &copy; 2025
+                      <span class="name">Recipe Nest. </span> All Rights
+                      Reserved.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <button class="scrolltop">
+                <i class="uil uil-angle-up"></i>
+              </button>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <!-- jquery  -->
+    <script src="/javascript/homejs/jquery-3.5.1.min.js"></script>
+    <!-- bootstrap -->
+    <script src="/javascript/homejs/bootstrap.min.js"></script>
+    <script src="/javascript/homejs/popper.min.js"></script>
+
+    <!-- fontawesome  -->
+    <script src="/javascript/homejs/font-awesome.min.js"></script>
+
+    <!-- swiper slider  -->
+    <script src="/javascript/homejs/swiper-bundle.min.js"></script>
+
+    <!-- mixitup -- filter  -->
+    <script src="/javascript/homejs/jquery.mixitup.min.js"></script>
+
+    <!-- fancy box  -->
+    <script src="/javascript/homejs/jquery.fancybox.min.js"></script>
+
+    <!-- parallax  -->
+    <script src="/javascript/homejs/parallax.min.js"></script>
+
+    <!-- gsap  -->
+    <script src="/javascript/homejs/gsap.min.js"></script>
+
+    <!-- scroll trigger  -->
+    <script src="/javascript/homejs/ScrollTrigger.min.js"></script>
+    <!-- scroll to plugin  -->
+    <script src="/javascript/homejs/ScrollToPlugin.min.js"></script>
+    <!-- smooth scroll  -->
+    <script src="/javascript/homejs/smooth-scroll.js"></script>
+    <!-- custom js  -->
+    <script src="/javascript/homejs/main.js"></script>
+  </body>
+</html>
